@@ -64,7 +64,7 @@ class _CadastroOperadorWidgetState extends State<CadastroOperadorWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        width: MediaQuery.of(context).size.width * 0.6,
+                        width: MediaQuery.of(context).size.width * 0.8,
                         height: MediaQuery.of(context).size.height * 1,
                         decoration: BoxDecoration(
                           color: Color(0xFFEEEEEE),
@@ -117,29 +117,26 @@ class _CadastroOperadorWidgetState extends State<CadastroOperadorWidget> {
                                   ],
                                 ),
                               ),
-                              SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 10, 0, 0),
-                                      child: Text(
-                                        'Cadastro do Operador',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0xFF030335),
-                                              fontSize: 28,
-                                            ),
-                                      ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20, 10, 0, 0),
+                                    child: Text(
+                                      'Cadastro do Operador',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Color(0xFF030335),
+                                            fontSize: 28,
+                                          ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -279,7 +276,8 @@ class _CadastroOperadorWidgetState extends State<CadastroOperadorWidget> {
                                       ),
                                     ),
                                     Container(
-                                      width: 280,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.25,
                                       decoration: BoxDecoration(
                                         color: Color(0xFFEEEEEE),
                                       ),
@@ -343,7 +341,12 @@ class _CadastroOperadorWidgetState extends State<CadastroOperadorWidget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Expanded(
+                                    Container(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.15,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFEEEEEE),
+                                      ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0, 20, 20, 0),
@@ -396,7 +399,8 @@ class _CadastroOperadorWidgetState extends State<CadastroOperadorWidget> {
                                       ),
                                     ),
                                     Container(
-                                      width: 300,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.2,
                                       decoration: BoxDecoration(
                                         color: Color(0xFFEEEEEE),
                                       ),
@@ -440,143 +444,163 @@ class _CadastroOperadorWidgetState extends State<CadastroOperadorWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           20, 20, 20, 0),
                                       child: Container(
-                                        width: 300,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.15,
                                         decoration: BoxDecoration(
                                           color: Color(0xFFEEEEEE),
                                         ),
-                                        child: TextFormField(
-                                          controller:
-                                              campoSenhaOperadorController,
-                                          onChanged: (_) =>
-                                              EasyDebounce.debounce(
-                                            'campoSenhaOperadorController',
-                                            Duration(milliseconds: 2000),
-                                            () => setState(() {}),
+                                        child: Container(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.15,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFFEEEEEE),
                                           ),
-                                          autofocus: true,
-                                          obscureText:
-                                              !campoSenhaOperadorVisibility,
-                                          decoration: InputDecoration(
-                                            labelText: 'Senha',
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0xFF04044E),
-                                                width: 1,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
+                                          child: TextFormField(
+                                            controller:
+                                                campoSenhaOperadorController,
+                                            onChanged: (_) =>
+                                                EasyDebounce.debounce(
+                                              'campoSenhaOperadorController',
+                                              Duration(milliseconds: 2000),
+                                              () => setState(() {}),
                                             ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0xFF04044E),
-                                                width: 1,
+                                            autofocus: true,
+                                            obscureText:
+                                                !campoSenhaOperadorVisibility,
+                                            decoration: InputDecoration(
+                                              labelText: 'Senha',
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xFF04044E),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xFF04044E),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .lineColor,
+                                              contentPadding:
+                                                  EdgeInsetsDirectional
+                                                      .fromSTEB(20, 0, 0, 0),
+                                              suffixIcon: InkWell(
+                                                onTap: () => setState(
+                                                  () => campoSenhaOperadorVisibility =
+                                                      !campoSenhaOperadorVisibility,
+                                                ),
+                                                child: Icon(
+                                                  campoSenhaOperadorVisibility
+                                                      ? Icons
+                                                          .visibility_outlined
+                                                      : Icons
+                                                          .visibility_off_outlined,
+                                                  color: Color(0xFF757575),
+                                                  size: 22,
+                                                ),
+                                              ),
                                             ),
-                                            filled: true,
-                                            fillColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .lineColor,
-                                            contentPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    20, 0, 0, 0),
-                                            suffixIcon: InkWell(
-                                              onTap: () => setState(
-                                                () => campoSenhaOperadorVisibility =
-                                                    !campoSenhaOperadorVisibility,
-                                              ),
-                                              child: Icon(
-                                                campoSenhaOperadorVisibility
-                                                    ? Icons.visibility_outlined
-                                                    : Icons
-                                                        .visibility_off_outlined,
-                                                color: Color(0xFF757575),
-                                                size: 22,
-                                              ),
-                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: Color(0xFF0F0F0F),
+                                                  fontSize: 16,
+                                                ),
+                                            keyboardType:
+                                                TextInputType.visiblePassword,
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color: Color(0xFF0F0F0F),
-                                                fontSize: 16,
-                                              ),
-                                          keyboardType:
-                                              TextInputType.visiblePassword,
                                         ),
                                       ),
                                     ),
-                                    Container(
-                                      width: 300,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xFFEEEEEE),
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 20, 0),
-                                        child: TextFormField(
-                                          controller:
-                                              campoConfirmarSenhaOperadorController,
-                                          onChanged: (_) =>
-                                              EasyDebounce.debounce(
-                                            'campoConfirmarSenhaOperadorController',
-                                            Duration(milliseconds: 2000),
-                                            () => setState(() {}),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          25, 0, 0, 0),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.15,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFEEEEEE),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 20, 0, 0),
+                                          child: TextFormField(
+                                            controller:
+                                                campoConfirmarSenhaOperadorController,
+                                            onChanged: (_) =>
+                                                EasyDebounce.debounce(
+                                              'campoConfirmarSenhaOperadorController',
+                                              Duration(milliseconds: 2000),
+                                              () => setState(() {}),
+                                            ),
+                                            autofocus: true,
+                                            obscureText:
+                                                !campoConfirmarSenhaOperadorVisibility,
+                                            decoration: InputDecoration(
+                                              labelText: 'Confirmar senha',
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xFF04044E),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xFF04044E),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .lineColor,
+                                              contentPadding:
+                                                  EdgeInsetsDirectional
+                                                      .fromSTEB(20, 0, 0, 0),
+                                              suffixIcon: InkWell(
+                                                onTap: () => setState(
+                                                  () => campoConfirmarSenhaOperadorVisibility =
+                                                      !campoConfirmarSenhaOperadorVisibility,
+                                                ),
+                                                child: Icon(
+                                                  campoConfirmarSenhaOperadorVisibility
+                                                      ? Icons
+                                                          .visibility_outlined
+                                                      : Icons
+                                                          .visibility_off_outlined,
+                                                  color: Color(0xFF757575),
+                                                  size: 22,
+                                                ),
+                                              ),
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: Color(0xFF0F0F0F),
+                                                  fontSize: 16,
+                                                ),
+                                            keyboardType:
+                                                TextInputType.visiblePassword,
                                           ),
-                                          autofocus: true,
-                                          obscureText:
-                                              !campoConfirmarSenhaOperadorVisibility,
-                                          decoration: InputDecoration(
-                                            labelText: 'Confirmar senha',
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0xFF04044E),
-                                                width: 1,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0xFF04044E),
-                                                width: 1,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                            ),
-                                            filled: true,
-                                            fillColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .lineColor,
-                                            contentPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    20, 0, 0, 0),
-                                            suffixIcon: InkWell(
-                                              onTap: () => setState(
-                                                () => campoConfirmarSenhaOperadorVisibility =
-                                                    !campoConfirmarSenhaOperadorVisibility,
-                                              ),
-                                              child: Icon(
-                                                campoConfirmarSenhaOperadorVisibility
-                                                    ? Icons.visibility_outlined
-                                                    : Icons
-                                                        .visibility_off_outlined,
-                                                color: Color(0xFF757575),
-                                                size: 22,
-                                              ),
-                                            ),
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color: Color(0xFF0F0F0F),
-                                                fontSize: 16,
-                                              ),
-                                          keyboardType:
-                                              TextInputType.visiblePassword,
                                         ),
                                       ),
                                     ),

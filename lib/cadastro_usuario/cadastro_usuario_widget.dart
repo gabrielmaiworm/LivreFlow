@@ -22,9 +22,8 @@ class CadastroUsuarioWidget extends StatefulWidget {
 
 class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
   DateTime datePicked;
-  TextEditingController campoCepController;
-  TextEditingController campoNomeUsuarioController;
   TextEditingController campoCpfUsuarioController;
+  TextEditingController campoNomeUsuarioController;
   TextEditingController campoCelularUsuarioController;
   TextEditingController campoEmailUsuarioController;
   TextEditingController campoSenhaUsuarioController;
@@ -54,9 +53,8 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
     campoEmailUsuarioController = TextEditingController();
     campoSenhaUsuarioController = TextEditingController();
     campoSenhaUsuarioVisibility = false;
-    campoCepController = TextEditingController();
-    campoNomeUsuarioController = TextEditingController();
     campoCpfUsuarioController = TextEditingController();
+    campoNomeUsuarioController = TextEditingController();
     campoCepUsuarioController = TextEditingController();
     campoLogradouroUsuarioController = TextEditingController();
     campoNumeroUsuarioController = TextEditingController();
@@ -86,7 +84,7 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        width: MediaQuery.of(context).size.width * 0.6,
+                        width: MediaQuery.of(context).size.width * 0.8,
                         height: MediaQuery.of(context).size.height * 1,
                         decoration: BoxDecoration(
                           color: Color(0xFFEEEEEE),
@@ -141,12 +139,12 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 10, 0, 0),
+                                        20, 10, 0, 0),
                                     child: Text(
                                       'Cadastro do Usuário',
                                       style: FlutterFlowTheme.of(context)
@@ -183,59 +181,6 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Container(
-                                    width: 1,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFFEEEEEE),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 20, 0, 0),
-                                      child: TextFormField(
-                                        controller: campoCepController,
-                                        onChanged: (_) => EasyDebounce.debounce(
-                                          'campoCepController',
-                                          Duration(milliseconds: 2000),
-                                          () => setState(() {}),
-                                        ),
-                                        autofocus: true,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          labelText: 'Bairro',
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0xFF04044E),
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0xFF04044E),
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                          ),
-                                          filled: true,
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .lineColor,
-                                          contentPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  20, 10, 20, 10),
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0xFF0F0F0F),
-                                              fontSize: 16,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
                                   Container(
                                     width: 550,
                                     decoration: BoxDecoration(

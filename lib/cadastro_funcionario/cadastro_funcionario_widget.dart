@@ -21,9 +21,8 @@ class CadastroFuncionarioWidget extends StatefulWidget {
 
 class _CadastroFuncionarioWidgetState extends State<CadastroFuncionarioWidget> {
   DateTime datePicked;
-  TextEditingController campoCepController;
-  TextEditingController campoNomeFuncionarioController;
   TextEditingController campoCpfFuncionarioController;
+  TextEditingController campoNomeFuncionarioController;
   TextEditingController campoCelularFuncionarioController;
   TextEditingController campoEmailFuncionarioController;
   TextEditingController senhaFuncionarioController;
@@ -49,9 +48,8 @@ class _CadastroFuncionarioWidgetState extends State<CadastroFuncionarioWidget> {
     campoEmailFuncionarioController = TextEditingController();
     senhaFuncionarioController = TextEditingController();
     senhaFuncionarioVisibility = false;
-    campoCepController = TextEditingController();
-    campoNomeFuncionarioController = TextEditingController();
     campoCpfFuncionarioController = TextEditingController();
+    campoNomeFuncionarioController = TextEditingController();
     campoCepFuncionarioController = TextEditingController();
     campoLogradouroFuncionarioController = TextEditingController();
     campoNumeroFuncionarioController = TextEditingController();
@@ -81,7 +79,7 @@ class _CadastroFuncionarioWidgetState extends State<CadastroFuncionarioWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        width: MediaQuery.of(context).size.width * 0.6,
+                        width: MediaQuery.of(context).size.width * 0.8,
                         height: MediaQuery.of(context).size.height * 1,
                         decoration: BoxDecoration(
                           color: Color(0xFFEEEEEE),
@@ -134,29 +132,26 @@ class _CadastroFuncionarioWidgetState extends State<CadastroFuncionarioWidget> {
                                   ],
                                 ),
                               ),
-                              SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 10, 0, 0),
-                                      child: Text(
-                                        'Cadastro do Funcionário',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0xFF030335),
-                                              fontSize: 28,
-                                            ),
-                                      ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20, 10, 0, 0),
+                                    child: Text(
+                                      'Cadastro do Funcionário',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Color(0xFF030335),
+                                            fontSize: 28,
+                                          ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -181,59 +176,6 @@ class _CadastroFuncionarioWidgetState extends State<CadastroFuncionarioWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Container(
-                                    width: 1,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFFEEEEEE),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 20, 0, 0),
-                                      child: TextFormField(
-                                        controller: campoCepController,
-                                        onChanged: (_) => EasyDebounce.debounce(
-                                          'campoCepController',
-                                          Duration(milliseconds: 2000),
-                                          () => setState(() {}),
-                                        ),
-                                        autofocus: true,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          labelText: 'Bairro',
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0xFF04044E),
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0xFF04044E),
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                          ),
-                                          filled: true,
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .lineColor,
-                                          contentPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  20, 10, 20, 10),
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0xFF0F0F0F),
-                                              fontSize: 16,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
                                   Container(
                                     width: 550,
                                     decoration: BoxDecoration(
@@ -788,7 +730,12 @@ class _CadastroFuncionarioWidgetState extends State<CadastroFuncionarioWidget> {
                                         ),
                                       ),
                                     ),
-                                    Expanded(
+                                    Container(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.12,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFEEEEEE),
+                                      ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             20, 20, 0, 0),

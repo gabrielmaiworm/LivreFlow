@@ -24,15 +24,15 @@ class _DevolucaoEquipamentoWidgetState
   String radioButtonValue3;
   String radioButtonValue4;
   String uploadedFileUrl = '';
-  TextEditingController campoNomeEquipController;
+  TextEditingController numSolicitacaoController;
   TextEditingController campoTempoUtilizacaoController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    campoNomeEquipController = TextEditingController();
     campoTempoUtilizacaoController = TextEditingController();
+    numSolicitacaoController = TextEditingController();
   }
 
   @override
@@ -210,9 +210,9 @@ class _DevolucaoEquipamentoWidgetState
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       20, 0, 20, 0),
                                   child: TextFormField(
-                                    controller: campoNomeEquipController,
+                                    controller: numSolicitacaoController,
                                     onChanged: (_) => EasyDebounce.debounce(
-                                      'campoNomeEquipController',
+                                      'numSolicitacaoController',
                                       Duration(milliseconds: 2000),
                                       () => setState(() {}),
                                     ),

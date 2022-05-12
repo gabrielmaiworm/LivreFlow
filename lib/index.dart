@@ -22,7 +22,7 @@ export 'inicio_usuario/inicio_usuario_widget.dart' show InicioUsuarioWidget;
 export 'cadastro_usuario/cadastro_usuario_widget.dart'
     show CadastroUsuarioWidget;
 export 'menu_cadastro/menu_cadastro_widget.dart' show MenuCadastroWidget;
-export 'cadastro_operador/cadastro_operador_widget.dart'
-    show CadastroOperadorWidget;
 export 'cadastro_funcionario/cadastro_funcionario_widget.dart'
     show CadastroFuncionarioWidget;
+export 'cadastro_operador/cadastro_operador_widget.dart'
+    show CadastroOperadorWidget;
