@@ -231,6 +231,13 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
                                               color: Color(0xFF0F0F0F),
                                               fontSize: 16,
                                             ),
+                                        validator: (val) {
+                                          if (val == null || val.isEmpty) {
+                                            return 'Informe o nome';
+                                          }
+
+                                          return null;
+                                        },
                                       ),
                                     ),
                                   ),
@@ -285,6 +292,15 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
                                               fontSize: 16,
                                             ),
                                         textAlign: TextAlign.start,
+                                        validator: (val) {
+                                          if (val == null || val.isEmpty) {
+                                            return 'Informe o CPF';
+                                          }
+                                          if (val.length < 11) {
+                                            return 'Requires at least 11 characters.';
+                                          }
+                                          return null;
+                                        },
                                       ),
                                     ),
                                   ),
@@ -407,6 +423,13 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
                                               color: Color(0xFF0F0F0F),
                                               fontSize: 16,
                                             ),
+                                        validator: (val) {
+                                          if (val == null || val.isEmpty) {
+                                            return 'Informe um endereço de e-mail';
+                                          }
+
+                                          return null;
+                                        },
                                       ),
                                     ),
                                   ),
@@ -475,6 +498,13 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
                                               color: Color(0xFF0F0F0F),
                                               fontSize: 16,
                                             ),
+                                        validator: (val) {
+                                          if (val == null || val.isEmpty) {
+                                            return 'Crie uma senha';
+                                          }
+
+                                          return null;
+                                        },
                                       ),
                                     ),
                                   ),
@@ -529,6 +559,13 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
                                               color: Color(0xFF0F0F0F),
                                               fontSize: 16,
                                             ),
+                                        validator: (val) {
+                                          if (val == null || val.isEmpty) {
+                                            return 'Informe um número de celular';
+                                          }
+
+                                          return null;
+                                        },
                                       ),
                                     ),
                                   ),
@@ -616,6 +653,13 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
                                                 color: Color(0xFF0F0F0F),
                                                 fontSize: 16,
                                               ),
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'Informe um CEP';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -671,6 +715,13 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
                                                 color: Color(0xFF0F0F0F),
                                                 fontSize: 16,
                                               ),
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'Informe um logradouro';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -727,6 +778,13 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
                                                 fontSize: 16,
                                               ),
                                           textAlign: TextAlign.center,
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'Field is required';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -1292,6 +1350,12 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
                                           20, 40, 20, 40),
                                       child: FFButtonWidget(
                                         onPressed: () async {
+                                          if (formKey.currentState == null ||
+                                              !formKey.currentState
+                                                  .validate()) {
+                                            return;
+                                          }
+
                                           await POSTUsuarioCall.call(
                                             nome:
                                                 campoNomeUsuarioController.text,
@@ -1321,7 +1385,7 @@ class _CadastroUsuarioWidgetState extends State<CadastroUsuarioWidget> {
                                             detalheLesao:
                                                 campoDetalhesLesaoController
                                                     .text,
-                                            fotoDocumento64: uploadedFileUrl1,
+                                            fotoDocumento: uploadedFileUrl1,
                                             fotoComDocumento64:
                                                 uploadedFileUrl2,
                                             senha: campoSenhaUsuarioController

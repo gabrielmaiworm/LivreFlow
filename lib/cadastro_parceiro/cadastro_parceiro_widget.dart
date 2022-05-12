@@ -249,6 +249,15 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 fontSize: 16,
                                               ),
                                           keyboardType: TextInputType.number,
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'Informe o CNPJ do parceiro';
+                                            }
+                                            if (val.length < 14) {
+                                              return 'O CNPJ é inválido';
+                                            }
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -301,6 +310,13 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 fontSize: 16,
                                               ),
                                           keyboardType: TextInputType.number,
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'Informe a inscrição estadual';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -352,6 +368,13 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 color: Color(0xFF0F0F0F),
                                                 fontSize: 16,
                                               ),
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'Informe o tipo de serviço';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -404,6 +427,13 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 fontSize: 16,
                                               ),
                                           keyboardType: TextInputType.number,
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'Informe o telefone do parceiro';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -464,6 +494,13 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 color: Color(0xFF0F0F0F),
                                                 fontSize: 16,
                                               ),
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'Informe a razão social';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -515,6 +552,13 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 color: Color(0xFF0F0F0F),
                                                 fontSize: 16,
                                               ),
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'Informe o nome fantasia do parceiro';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -566,6 +610,13 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 color: Color(0xFF0F0F0F),
                                                 fontSize: 16,
                                               ),
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'Informe o email';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -698,6 +749,13 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 fontSize: 16,
                                               ),
                                           keyboardType: TextInputType.number,
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'Informe o número da  agência ';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -749,6 +807,13 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 color: Color(0xFF0F0F0F),
                                                 fontSize: 16,
                                               ),
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'Informe a conta do parceiro';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -869,6 +934,13 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 color: Color(0xFF0F0F0F),
                                                 fontSize: 16,
                                               ),
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'O CEP é obrigatório';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -924,6 +996,13 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 color: Color(0xFF0F0F0F),
                                                 fontSize: 16,
                                               ),
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'O logradouro é obrigatório';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -980,6 +1059,13 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 fontSize: 16,
                                               ),
                                           textAlign: TextAlign.center,
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'O número é obrigatório';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -1092,6 +1178,13 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 color: Color(0xFF0F0F0F),
                                                 fontSize: 16,
                                               ),
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'O bairro é obrigatório';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -1148,6 +1241,13 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                                 fontSize: 16,
                                               ),
                                           textAlign: TextAlign.start,
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'A cidade é obrigatória';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
@@ -1717,6 +1817,12 @@ class _CadastroParceiroWidgetState extends State<CadastroParceiroWidget> {
                                           20, 40, 20, 40),
                                       child: FFButtonWidget(
                                         onPressed: () async {
+                                          if (formKey.currentState == null ||
+                                              !formKey.currentState
+                                                  .validate()) {
+                                            return;
+                                          }
+
                                           await POSTParceiroCall.call(
                                             nome:
                                                 campoNomeGestorController.text,

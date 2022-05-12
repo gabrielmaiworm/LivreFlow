@@ -14,9 +14,9 @@ export 'login/login_widget.dart' show LoginWidget;
 export 'cadastro_parceiro/cadastro_parceiro_widget.dart'
     show CadastroParceiroWidget;
 export 'aparelhos/aparelhos_widget.dart' show AparelhosWidget;
+export 'estoque/estoque_widget.dart' show EstoqueWidget;
 export 'atualiza_equipamento/atualiza_equipamento_widget.dart'
     show AtualizaEquipamentoWidget;
-export 'estoque/estoque_widget.dart' show EstoqueWidget;
 export 'inicio_parceiro/inicio_parceiro_widget.dart' show InicioParceiroWidget;
 export 'inicio_usuario/inicio_usuario_widget.dart' show InicioUsuarioWidget;
 export 'cadastro_usuario/cadastro_usuario_widget.dart'

@@ -16,15 +16,16 @@ class EstoqueWidget extends StatefulWidget {
 }
 
 class _EstoqueWidgetState extends State<EstoqueWidget> {
+  final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  TextEditingController campoNomeParceiroController1;
-  TextEditingController campoNomeParceiroController2;
+  TextEditingController numSerieBatController;
+  TextEditingController numSerieEquipController;
 
   @override
   void initState() {
     super.initState();
-    campoNomeParceiroController1 = TextEditingController();
-    campoNomeParceiroController2 = TextEditingController();
+    numSerieBatController = TextEditingController();
+    numSerieEquipController = TextEditingController();
   }
 
   @override
@@ -151,28 +152,125 @@ class _EstoqueWidgetState extends State<EstoqueWidget> {
                                   Expanded(
                                     child: TabBarView(
                                       children: [
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 30, 0, 0),
-                                              child: Row(
+                                        Form(
+                                          key: formKey,
+                                          autovalidateMode:
+                                              AutovalidateMode.disabled,
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(0, 30, 0, 0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Expanded(
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(20, 0,
+                                                                    20, 0),
+                                                        child: TextFormField(
+                                                          controller:
+                                                              numSerieEquipController,
+                                                          onChanged: (_) =>
+                                                              EasyDebounce
+                                                                  .debounce(
+                                                            'numSerieEquipController',
+                                                            Duration(
+                                                                milliseconds:
+                                                                    2000),
+                                                            () =>
+                                                                setState(() {}),
+                                                          ),
+                                                          autofocus: true,
+                                                          obscureText: false,
+                                                          decoration:
+                                                              InputDecoration(
+                                                            labelText:
+                                                                'Número de série equipamento',
+                                                            hintText: '  ',
+                                                            enabledBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Color(
+                                                                    0xFF04044E),
+                                                                width: 1,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20),
+                                                            ),
+                                                            focusedBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Color(
+                                                                    0xFF04044E),
+                                                                width: 1,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20),
+                                                            ),
+                                                            filled: true,
+                                                            fillColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .lineColor,
+                                                            contentPadding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        20,
+                                                                        0,
+                                                                        0,
+                                                                        0),
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: Color(
+                                                                    0xFF0F0F0F),
+                                                                fontSize: 16,
+                                                              ),
+                                                          validator: (val) {
+                                                            if (val == null ||
+                                                                val.isEmpty) {
+                                                              return 'Informe o número de série do equipamento';
+                                                            }
+
+                                                            return null;
+                                                          },
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Expanded(
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  20, 0, 20, 0),
+                                                              .fromSTEB(20, 50,
+                                                                  20, 0),
                                                       child: TextFormField(
                                                         controller:
-                                                            campoNomeParceiroController1,
+                                                            numSerieBatController,
                                                         onChanged: (_) =>
                                                             EasyDebounce
                                                                 .debounce(
-                                                          'campoNomeParceiroController1',
+                                                          'numSerieBatController',
                                                           Duration(
                                                               milliseconds:
                                                                   2000),
@@ -183,7 +281,7 @@ class _EstoqueWidgetState extends State<EstoqueWidget> {
                                                         decoration:
                                                             InputDecoration(
                                                           labelText:
-                                                              'Número de série equipamento',
+                                                              'Número de série bateria',
                                                           hintText: '  ',
                                                           enabledBorder:
                                                               OutlineInputBorder(
@@ -232,140 +330,104 @@ class _EstoqueWidgetState extends State<EstoqueWidget> {
                                                                       0xFF0F0F0F),
                                                                   fontSize: 16,
                                                                 ),
+                                                        validator: (val) {
+                                                          if (val == null ||
+                                                              val.isEmpty) {
+                                                            return 'Informe o número de série da bateria';
+                                                          }
+
+                                                          return null;
+                                                        },
                                                       ),
                                                     ),
                                                   ),
                                                 ],
                                               ),
-                                            ),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                20, 50, 20, 0),
-                                                    child: TextFormField(
-                                                      controller:
-                                                          campoNomeParceiroController2,
-                                                      onChanged: (_) =>
-                                                          EasyDebounce.debounce(
-                                                        'campoNomeParceiroController2',
-                                                        Duration(
-                                                            milliseconds: 2000),
-                                                        () => setState(() {}),
-                                                      ),
-                                                      autofocus: true,
-                                                      obscureText: false,
-                                                      decoration:
-                                                          InputDecoration(
-                                                        labelText:
-                                                            'Número de série bateria',
-                                                        hintText: '  ',
-                                                        enabledBorder:
-                                                            OutlineInputBorder(
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(0, 40, 0, 0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.end,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(20, 0,
+                                                                  20, 20),
+                                                      child: FFButtonWidget(
+                                                        onPressed: () async {
+                                                          if (formKey.currentState ==
+                                                                  null ||
+                                                              !formKey
+                                                                  .currentState
+                                                                  .validate()) {
+                                                            return;
+                                                          }
+
+                                                          await showDialog(
+                                                            context: context,
+                                                            builder:
+                                                                (alertDialogContext) {
+                                                              return AlertDialog(
+                                                                title: Text(
+                                                                    'Montagem do kit'),
+                                                                content: Text(
+                                                                    'Kit montado com sucesso!'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext),
+                                                                    child: Text(
+                                                                        'Ok'),
+                                                                  ),
+                                                                ],
+                                                              );
+                                                            },
+                                                          );
+                                                          Navigator.pop(
+                                                              context);
+                                                        },
+                                                        text: 'Montar kit',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 230,
+                                                          height: 55,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryColor,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .subtitle2
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize:
+                                                                        18,
+                                                                  ),
                                                           borderSide:
                                                               BorderSide(
-                                                            color: Color(
-                                                                0xFF04044E),
+                                                            color: Colors
+                                                                .transparent,
                                                             width: 1,
                                                           ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(20),
+                                                          borderRadius: 12,
                                                         ),
-                                                        focusedBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Color(
-                                                                0xFF04044E),
-                                                            width: 1,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(20),
-                                                        ),
-                                                        filled: true,
-                                                        fillColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .lineColor,
-                                                        contentPadding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(20, 0,
-                                                                    0, 0),
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyText1
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: Color(
-                                                                    0xFF0F0F0F),
-                                                                fontSize: 16,
-                                                              ),
                                                     ),
-                                                  ),
+                                                  ],
                                                 ),
-                                              ],
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 40, 0, 0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                20, 0, 20, 20),
-                                                    child: FFButtonWidget(
-                                                      onPressed: () {
-                                                        print(
-                                                            'Button pressed ...');
-                                                      },
-                                                      text: 'Montar kit',
-                                                      options: FFButtonOptions(
-                                                        width: 230,
-                                                        height: 55,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryColor,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .subtitle2
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontSize: 18,
-                                                                ),
-                                                        borderSide: BorderSide(
-                                                          color: Colors
-                                                              .transparent,
-                                                          width: 1,
-                                                        ),
-                                                        borderRadius: 12,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                         Column(
                                           mainAxisSize: MainAxisSize.max,

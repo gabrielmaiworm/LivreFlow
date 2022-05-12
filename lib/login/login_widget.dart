@@ -1,4 +1,3 @@
-import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -265,17 +264,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                               children: [
                                 FFButtonWidget(
                                   onPressed: () async {
-                                    await LoginCall.call(
-                                      email: emailController.text,
-                                      senha: senhaController.text,
-                                    );
                                     await Navigator.push(
                                       context,
                                       PageTransition(
-                                        type: PageTransitionType.bottomToTop,
-                                        duration: Duration(milliseconds: 311),
+                                        type: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 300),
                                         reverseDuration:
-                                            Duration(milliseconds: 311),
+                                            Duration(milliseconds: 300),
                                         child: InicioMasterWidget(),
                                       ),
                                     );

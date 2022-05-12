@@ -34,7 +34,7 @@ class POSTUsuarioCall {
     String situacaoLesao = '',
     String nivelLesao = '',
     String detalheLesao = '',
-    String fotoDocumento64 = '',
+    String fotoDocumento = '',
     String fotoComDocumento64 = '',
     String senha = '',
     String telefoneCelular = '',
@@ -57,7 +57,7 @@ class POSTUsuarioCall {
         "situacao_lesao": "${situacaoLesao}",
         "nivel_lesao": "${nivelLesao}",
         "detalhe_lesao": "${detalheLesao}",
-        "foto_documento64": "${fotoDocumento64}",
+        "foto_documento64": "${fotoDocumento}",
         "foto_com_documento64": "${fotoComDocumento64}",
         "senha": "${senha}"
     }''';
@@ -82,7 +82,7 @@ class POSTUsuarioCall {
         'situacao_lesao': situacaoLesao,
         'nivel_lesao': nivelLesao,
         'detalhe_lesao': detalheLesao,
-        'foto_documento64': fotoDocumento64,
+        'foto_documento': fotoDocumento,
         'foto_com_documento64': fotoComDocumento64,
         'senha': senha,
         'telefone_celular': telefoneCelular,

@@ -24,7 +24,7 @@ Future<User> signInOrCreateAccount(
   } on FirebaseAuthException catch (e) {
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Error: ${e.message}')),
+      SnackBar(content: Text('Erro na autenticação')),
     );
     return null;
   }
@@ -60,12 +60,12 @@ Future resetPassword({String email, BuildContext context}) async {
   } on FirebaseAuthException catch (e) {
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Error: ${e.message}')),
+      SnackBar(content: Text('Erro na autenticação')),
     );
     return null;
   }
   ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(content: Text('Password reset email sent')),
+    SnackBar(content: Text('Email para alteração de senha enviado!')),
   );
 }
 
@@ -138,7 +138,7 @@ Future beginPhoneAuth({
     },
     verificationFailed: (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('Error: ${e.message}'),
+        content: Text('Erro na autenticação'),
       ));
     },
     codeSent: (verificationId, _) {

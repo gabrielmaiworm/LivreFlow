@@ -1,7 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../inicio_master/inicio_master_widget.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -15,6 +14,7 @@ class CadastroMasterWidget extends StatefulWidget {
 }
 
 class _CadastroMasterWidgetState extends State<CadastroMasterWidget> {
+  final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController campoConfirmSenhaparceiroController;
   bool campoConfirmSenhaparceiroVisibility;
@@ -56,167 +56,109 @@ class _CadastroMasterWidgetState extends State<CadastroMasterWidget> {
                   decoration: BoxDecoration(
                     color: Color(0xFFEEEEEE),
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height * 1,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFEEEEEE),
-                        ),
-                        child: SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10, 10, 0, 0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 20, 0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          Navigator.pop(context);
-                                        },
-                                        text: '',
-                                        icon: Icon(
-                                          Icons.chevron_left,
-                                          size: 35,
-                                        ),
-                                        options: FFButtonOptions(
-                                          width: 60,
-                                          height: 60,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryColor,
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .subtitle2
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    color: Colors.white,
-                                                  ),
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1,
+                  child: Form(
+                    key: formKey,
+                    autovalidateMode: AutovalidateMode.disabled,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height * 1,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFEEEEEE),
+                          ),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10, 10, 0, 0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 20, 0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            Navigator.pop(context);
+                                          },
+                                          text: '',
+                                          icon: Icon(
+                                            Icons.chevron_left,
+                                            size: 35,
                                           ),
-                                          borderRadius: 100,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 30, 0, 0),
-                                      child: Text(
-                                        'Cadastro do Master',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0xFF030335),
-                                              fontSize: 28,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 50, 20, 0),
-                                      child: TextFormField(
-                                        controller: campoEmailController,
-                                        onChanged: (_) => EasyDebounce.debounce(
-                                          'campoEmailController',
-                                          Duration(milliseconds: 2000),
-                                          () => setState(() {}),
-                                        ),
-                                        autofocus: true,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          labelText: 'Email',
-                                          hintText: '  ',
-                                          enabledBorder: OutlineInputBorder(
+                                          options: FFButtonOptions(
+                                            width: 60,
+                                            height: 60,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.white,
+                                                    ),
                                             borderSide: BorderSide(
-                                              color: Color(0xFF04044E),
+                                              color: Colors.transparent,
                                               width: 1,
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(20),
+                                            borderRadius: 100,
                                           ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0xFF04044E),
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                          ),
-                                          filled: true,
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .lineColor,
-                                          contentPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  20, 0, 0, 0),
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0xFF0F0F0F),
-                                              fontSize: 16,
-                                            ),
-                                        keyboardType:
-                                            TextInputType.emailAddress,
                                       ),
-                                    ),
+                                    ],
                                   ),
-                                ],
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                                child: Row(
+                                ),
+                                SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 30, 0, 0),
+                                        child: Text(
+                                          'Cadastro do Master',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color: Color(0xFF030335),
+                                                fontSize: 28,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 20, 0),
+                                            20, 50, 20, 0),
                                         child: TextFormField(
-                                          controller:
-                                              campoSenhaParceiroController,
+                                          controller: campoEmailController,
                                           onChanged: (_) =>
                                               EasyDebounce.debounce(
-                                            'campoSenhaParceiroController',
+                                            'campoEmailController',
                                             Duration(milliseconds: 2000),
                                             () => setState(() {}),
                                           ),
                                           autofocus: true,
-                                          obscureText:
-                                              !campoSenhaParceiroVisibility,
+                                          obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: '  Senha',
-                                            hintText: 'Senha',
+                                            labelText: 'Email',
+                                            hintText: '  ',
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0xFF04044E),
@@ -237,20 +179,9 @@ class _CadastroMasterWidgetState extends State<CadastroMasterWidget> {
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
                                                     .lineColor,
-                                            suffixIcon: InkWell(
-                                              onTap: () => setState(
-                                                () => campoSenhaParceiroVisibility =
-                                                    !campoSenhaParceiroVisibility,
-                                              ),
-                                              child: Icon(
-                                                campoSenhaParceiroVisibility
-                                                    ? Icons.visibility_outlined
-                                                    : Icons
-                                                        .visibility_off_outlined,
-                                                color: Color(0xFF757575),
-                                                size: 22,
-                                              ),
-                                            ),
+                                            contentPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    20, 0, 0, 0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText1
@@ -260,161 +191,261 @@ class _CadastroMasterWidgetState extends State<CadastroMasterWidget> {
                                                 fontSize: 16,
                                               ),
                                           keyboardType:
-                                              TextInputType.visiblePassword,
+                                              TextInputType.emailAddress,
+                                          validator: (val) {
+                                            if (val == null || val.isEmpty) {
+                                              return 'Informe um email válido';
+                                            }
+
+                                            return null;
+                                          },
                                         ),
                                       ),
                                     ),
                                   ],
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 20, 20, 0),
-                                        child: TextFormField(
-                                          controller:
-                                              campoConfirmSenhaparceiroController,
-                                          onChanged: (_) =>
-                                              EasyDebounce.debounce(
-                                            'campoConfirmSenhaparceiroController',
-                                            Duration(milliseconds: 2000),
-                                            () => setState(() {}),
-                                          ),
-                                          autofocus: true,
-                                          obscureText:
-                                              !campoConfirmSenhaparceiroVisibility,
-                                          decoration: InputDecoration(
-                                            labelText: '  Confirmar Senha',
-                                            hintText: ' Confirmar Senha',
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0xFF04044E),
-                                                width: 1,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 20, 0, 0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  20, 20, 20, 0),
+                                          child: TextFormField(
+                                            controller:
+                                                campoSenhaParceiroController,
+                                            onChanged: (_) =>
+                                                EasyDebounce.debounce(
+                                              'campoSenhaParceiroController',
+                                              Duration(milliseconds: 2000),
+                                              () => setState(() {}),
                                             ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0xFF04044E),
-                                                width: 1,
+                                            autofocus: true,
+                                            obscureText:
+                                                !campoSenhaParceiroVisibility,
+                                            decoration: InputDecoration(
+                                              labelText: '  Senha',
+                                              hintText: 'Senha',
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xFF04044E),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xFF04044E),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .lineColor,
+                                              suffixIcon: InkWell(
+                                                onTap: () => setState(
+                                                  () => campoSenhaParceiroVisibility =
+                                                      !campoSenhaParceiroVisibility,
+                                                ),
+                                                child: Icon(
+                                                  campoSenhaParceiroVisibility
+                                                      ? Icons
+                                                          .visibility_outlined
+                                                      : Icons
+                                                          .visibility_off_outlined,
+                                                  color: Color(0xFF757575),
+                                                  size: 22,
+                                                ),
+                                              ),
                                             ),
-                                            filled: true,
-                                            fillColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .lineColor,
-                                            suffixIcon: InkWell(
-                                              onTap: () => setState(
-                                                () => campoConfirmSenhaparceiroVisibility =
-                                                    !campoConfirmSenhaparceiroVisibility,
-                                              ),
-                                              child: Icon(
-                                                campoConfirmSenhaparceiroVisibility
-                                                    ? Icons.visibility_outlined
-                                                    : Icons
-                                                        .visibility_off_outlined,
-                                                color: Color(0xFF757575),
-                                                size: 22,
-                                              ),
-                                            ),
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color: Color(0xFF0F0F0F),
-                                                fontSize: 16,
-                                              ),
-                                          keyboardType:
-                                              TextInputType.visiblePassword,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 60, 0, 0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 20, 20, 20),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text('Cadastro'),
-                                                content: Text(
-                                                    'Master cadastrado com sucesso!'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
-                                              );
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: Color(0xFF0F0F0F),
+                                                  fontSize: 16,
+                                                ),
+                                            keyboardType:
+                                                TextInputType.visiblePassword,
+                                            validator: (val) {
+                                              if (val == null || val.isEmpty) {
+                                                return 'A senha é obrigatória';
+                                              }
+                                              if (val.length < 6) {
+                                                return 'A senha deve ter no mínimo 6 caracteres';
+                                              }
+                                              return null;
                                             },
-                                          );
-                                          await Navigator.push(
-                                            context,
-                                            PageTransition(
-                                              type: PageTransitionType.fade,
-                                              duration:
-                                                  Duration(milliseconds: 300),
-                                              reverseDuration:
-                                                  Duration(milliseconds: 300),
-                                              child: InicioMasterWidget(),
-                                            ),
-                                          );
-                                        },
-                                        text: 'Cadastrar Master',
-                                        options: FFButtonOptions(
-                                          width: 280,
-                                          height: 55,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryColor,
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .subtitle2
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    color: Colors.white,
-                                                    fontSize: 18,
-                                                  ),
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1,
                                           ),
-                                          borderRadius: 12,
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 20, 0, 0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  20, 20, 20, 0),
+                                          child: TextFormField(
+                                            controller:
+                                                campoConfirmSenhaparceiroController,
+                                            onChanged: (_) =>
+                                                EasyDebounce.debounce(
+                                              'campoConfirmSenhaparceiroController',
+                                              Duration(milliseconds: 2000),
+                                              () => setState(() {}),
+                                            ),
+                                            autofocus: true,
+                                            obscureText:
+                                                !campoConfirmSenhaparceiroVisibility,
+                                            decoration: InputDecoration(
+                                              labelText: '  Confirmar Senha',
+                                              hintText: ' Confirmar Senha',
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xFF04044E),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xFF04044E),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .lineColor,
+                                              suffixIcon: InkWell(
+                                                onTap: () => setState(
+                                                  () => campoConfirmSenhaparceiroVisibility =
+                                                      !campoConfirmSenhaparceiroVisibility,
+                                                ),
+                                                child: Icon(
+                                                  campoConfirmSenhaparceiroVisibility
+                                                      ? Icons
+                                                          .visibility_outlined
+                                                      : Icons
+                                                          .visibility_off_outlined,
+                                                  color: Color(0xFF757575),
+                                                  size: 22,
+                                                ),
+                                              ),
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: Color(0xFF0F0F0F),
+                                                  fontSize: 16,
+                                                ),
+                                            keyboardType:
+                                                TextInputType.visiblePassword,
+                                            validator: (val) {
+                                              if (val == null || val.isEmpty) {
+                                                return 'É necessário confirmar sua senha';
+                                              }
+                                              if (val.length < 6) {
+                                                return 'A confirmação da senha deve ter no mínimo 6 caracteres';
+                                              }
+                                              return null;
+                                            },
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 60, 0, 0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            20, 20, 20, 20),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            if (formKey.currentState == null ||
+                                                !formKey.currentState
+                                                    .validate()) {
+                                              return;
+                                            }
+
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: Text('Cadastro'),
+                                                  content: Text(
+                                                      'Master cadastrado com sucesso!'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
+                                            Navigator.pop(context);
+                                          },
+                                          text: 'Cadastrar Master',
+                                          options: FFButtonOptions(
+                                            width: 280,
+                                            height: 55,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.white,
+                                                      fontSize: 18,
+                                                    ),
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1,
+                                            ),
+                                            borderRadius: 12,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
