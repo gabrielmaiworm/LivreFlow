@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "462353741427",
+    "project_id": "biolivre-df492",
+    "storage_bucket": "biolivre-df492.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462353741427:android:9514a376ad2145771c1c06",
+        "android_client_info": {
+          "package_name": "com.flutterflow.moblivreteste"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462353741427-tobbafvda0u6of6ta75ma3ad2nnqmv96.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVYCb7gJG92Ha1tOHdheXirRheVssae6s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462353741427-tobbafvda0u6of6ta75ma3ad2nnqmv96.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "462353741427-0nuvngovk0ftfrscjjb0vc35kf4tquip.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.moblivreteste"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
